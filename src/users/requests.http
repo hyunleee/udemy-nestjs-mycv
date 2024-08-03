@@ -1,0 +1,47 @@
+### Create a new user
+Post http://localhost:3000/auth/signup
+content-type: application/json
+
+{
+    "email": "test@test.com",
+    "password": "12345"
+}
+
+### Sign in as an existing user
+Post http://localhost:3000/auth/signin
+content-type: application/json
+
+{
+    "email": "test@test.com",
+    "password": "12345"
+}
+
+### Get the currently signed in user
+GET http://localhost:3000/auth/whoami
+
+### Sign out
+POST http://localhost:3000/auth/signout
+
+### Find a particular user with a given Id
+GET http://localhost:3000/auth/1
+
+### Find all users with a given email
+GET http://localhost:3000/auth?asdf@asdf.com
+
+### Delete a user with a given Id
+DELETE http://localhost:3000/auth/1
+
+### Update a user
+PATCH http://localhost:3000/auth/2
+Content-Type: application/json
+
+{
+    "email": "bbbb@bbbb.com"
+}
+
+### 쿠키 테스트
+### Set a color
+GET http://localhost:3000/auth/colors/red
+
+### Get a color
+GET http://localhost:3000/auth/colors
